@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import '@radix-ui/themes/styles.css';
-import { Theme } from '@radix-ui/themes';
+import { Flex, Separator, Theme } from '@radix-ui/themes';
+import Link from 'next/link'
+import { Text } from "@radix-ui/themes"
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,6 +22,15 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Theme >
+          <header>
+            <Flex gap='4' p='4' align='center'>
+              <Link href="/"><Text>Home</Text></Link>
+              <Separator size='1' orientation='vertical' />
+              <Link href="/upload"><Text>Upload</Text></Link>
+              <Separator size='1' orientation='vertical' />
+              <Link href="/all-blobs"><Text>All Blobs</Text></Link>
+            </Flex>
+          </header>
           {children}
         </Theme>
       </body>
