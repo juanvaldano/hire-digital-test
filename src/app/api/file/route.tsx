@@ -14,5 +14,5 @@ export const POST = async (req: Request) => {
 
 	const blob = await put(file.name, file, { access: 'public' })
 
-	return Response.json(blob)
+	return NextResponse.json(blob)
 }
