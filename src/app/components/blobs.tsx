@@ -4,8 +4,9 @@ import { Flex, Link, Skeleton, Text } from "@radix-ui/themes"
 import DeleteButton from "./deleteButton"
 import ModifyButton from "./modifyButton"
 import { useEffect, useState } from "react"
+import { ListBlobResultBlob } from "@vercel/blob"
 
-const Blobs = ({ blobs }) => {
+const Blobs = ({ blobs }: { blobs: ListBlobResultBlob[] }) => {
 	const [isReady, setIsReady] = useState(false)
 
 	useEffect(() => {

@@ -1,8 +1,7 @@
 import { del } from "@vercel/blob"
-import { NextApiRequest } from "next"
-import { NextResponse } from "next/server"
+import { NextRequest, NextResponse } from "next/server"
 
-export const DELETE = async (req: NextApiRequest, context: any) => {
+export const DELETE = async (req: NextRequest, context: any) => {
 	const { params } = context
 	let { url } = params
 	url = decodeURIComponent(url) 
@@ -18,7 +17,7 @@ export const DELETE = async (req: NextApiRequest, context: any) => {
 	return NextResponse.json({ success: true })
 }
 
-export const PUT = async (req: NextApiRequest, context: any) => {
+export const PUT = async (req: NextRequest, context: any) => {
 	const { params } = context
 	let { url } = params
 	url = decodeURIComponent(url) 
