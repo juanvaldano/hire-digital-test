@@ -33,7 +33,7 @@ const Blobs = ({ blobs }) => {
 					blobs.map((blob) => (
 						<li key={`${blob.pathname}-${blob.uploadedAt}`}>
 							<Flex gap='1'>
-								<Link href={blob.downloadUrl} target='_blank'>
+								<Link href={blob.url} target='_blank'>
 									<Text>{blob.pathname}</Text>
 								</Link>
 								<DeleteButton url={blob.url} />
