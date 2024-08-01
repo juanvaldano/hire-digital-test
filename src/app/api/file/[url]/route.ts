@@ -4,8 +4,8 @@ import { NextResponse } from "next/server"
 
 export const DELETE = async (req: NextApiRequest, context: any) => {
 	const { params } = context
-    let { url } = params
-    url = decodeURIComponent(url) 
+	let { url } = params
+	url = decodeURIComponent(url) 
 
 	if(!url) {
 		return NextResponse.json(
@@ -16,4 +16,10 @@ export const DELETE = async (req: NextApiRequest, context: any) => {
 
 	await del(url)
 	return NextResponse.json({ success: true })
+}
+
+export const PUT = async (req: NextApiRequest, context: any) => {
+	const { params } = context
+	let { url } = params
+	url = decodeURIComponent(url) 
 }
